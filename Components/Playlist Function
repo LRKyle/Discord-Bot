@@ -1,0 +1,33 @@
+#Playlist Play Function
+    if 'https://www.youtube.com/playlist?list=' in query:
+
+        def search(query):
+            global info
+            global source
+            with YoutubeDL({'format': 'bestaudio'}) as ydl:
+                try:
+                    requests.get(query)
+                    print("The first")
+                except:
+                    info = ydl.extract_info(f"ytsearch:{query}",
+                                            download=False)['entries'][1]
+                else:
+                    info = ydl.extract_info(query, download=False)
+            return (info, info['entries'][0]["formats"][0]['url'])
+
+        video, source = search(query)
+
+        if 'entries' in nextPlaylistSong:
+            for i in nextPlaylistSong['entries']:
+                URL = i['formats'][0]['url']
+                nextSong.append(URL)
+                await ctx.send(f"Now playing: **{i['title']}** ")
+                voice.play(FFmpegPCMAudio(URL, **FFMPEG_OPTIONS))
+                songQueue.append(i['title'])
+                songDuration.append(i['duration'])
+
+                while not songDuration[0] == 0:
+                    await asyncio.sleep(1)
+                    songDuration[0] = songDuration[0] - 1
+
+            #await ctx.send('**Note:** The playlist songs will show up in the queue has they are being played. This means you are able to play a song in the middle of the playlist.')
