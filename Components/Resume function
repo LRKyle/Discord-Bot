@@ -1,0 +1,15 @@
+#Resume Function - Works
+@bot.command()
+async def resume(ctx):
+    voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
+    if (voice == None):
+        await ctx.send(
+          "I'm in not currently in a VC!\nuse the join command to make me join!"
+        )
+    if voice.is_paused():
+        voice.resume()
+        PauseCalled()
+    elif (voice == None):
+        await ctx.send("I'm in not currently in a VC!\n use the join command to make me join!")
+    else:
+        await ctx.send("The audio is not paused.")
