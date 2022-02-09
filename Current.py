@@ -106,65 +106,6 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-
-@bot.command(aliases=['doujinshi'])
-async def doujin(ctx, arg):
-    print("The user asked for doujin number " + arg + "\n")
-    if int(arg) > DoujinMax:
-        await ctx.channel.send('The number is too high! Redo the command!')
-
-    if int(arg) < DoujinMax:
-        Embed = discord.Embed(
-            title='Doujinshi Deliverer!',
-            description=(f'[**Your doujin!**](https://nhentai.net/g/{arg}/)'),
-            color=discord.Color.from_rgb(255, 0, 0))
-        #Embed.set_image(url="https://c.tenor.com/7fuoqpm9DtwAAAAd/please-dont-bully-me-anime.gif")
-        await ctx.channel.send(embed=Embed)
-
-
-@bot.command(aliases=['RDoujin', 'randd', 'randdoujin', 'rdoujinishi'])
-async def rand(ctx):
-    RandDoujin = random.randint(0, 374191)
-    print(f"The random doujin that the user got was {RandDoujin}")
-    Embed = discord.Embed(
-        title='Randomize Doujin!',
-        description=
-        f'[:tada:**Your mysterious doujin!**:tada:](https://nhentai.net/g/{RandDoujin}/)',
-        color=discord.Color.from_rgb(101, 67, 33))
-    Embed.set_image(
-        url=
-        "https://c.tenor.com/7fuoqpm9DtwAAAAd/please-dont-bully-me-anime.gif")
-    await ctx.channel.send(embed=Embed)
-
-
-@bot.command(aliases=['RHentai', 'randhentai', 'randh'])
-async def hrand(ctx):
-    RandHentai = random.randint(0, 99999999999999)
-    print(f"The random hentai that the user got was {RandHentai}")
-    Embed = discord.Embed(
-        title='Randomize Hanime Page!',
-        description=
-        f'[:monkey:**Hanime randomized!**:monkey:](https://hanime.tv/browse/random?r={RandHentai})',
-        color=discord.Color.from_rgb(101, 67, 33))
-    Embed.set_image(
-        url="https://c.tenor.com/Fl6m3zSv3XgAAAAd/monkey-spinning.gif")
-    await ctx.channel.send(embed=Embed)
-
-
-@bot.command(aliases=['char', 'character'])
-async def tag(ctx, *, arg):
-    if ' ' in arg:
-        splitResp = arg.split(' ')
-        JoinedResp = ('+'.join(splitResp))
-        await ctx.channel.send(
-            f'The tag/character you searched for is!\nhttps://nhentai.net/search/?q={JoinedResp}'
-        )
-    else:
-        await ctx.channel.send(
-            f'The tag/character you searched for is!\nhttps://nhentai.net/search/?q={arg}'
-        )
-
-
 @bot.command()
 async def google(ctx, *, arg):
     JoinedResp = arg
