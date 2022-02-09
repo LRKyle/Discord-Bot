@@ -367,18 +367,3 @@ async def clear(ctx):
 
 bot.run(os.environ['token'])
 
-
-
-
-'''async def chnick(ctx, member: discord.Member, nick):
-    await member.edit(nick=nick)
-    await ctx.send(f'Nickname was changed for {member.mention} ')+'''
-'''Saved Embed example
-Embed = discord.Embed(
-    title = 'Your random doujin!',
-    description = f'[:tada:**Your mysterious doujin!**:tada:](https://nhentai.net/g/{RandDoujin}/)'),
-    color = discord.Color.from_rgb(101, 67, 33)
-  )
-  Embed.set_image(url="https://c.tenor.com/7fuoqpm9DtwAAAAd/please-dont-bully-me-anime.gif")
-
-  await ctx.channel.send(embed = Embed)'''
