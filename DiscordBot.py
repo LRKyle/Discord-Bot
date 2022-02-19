@@ -340,18 +340,10 @@ async def loop(ctx):
     LoopCalled()
     await ctx.send(f"{info['title']} is being looped. Do the loop command again to disable the loop it.")
 
-bot.run('ODc3NDIwMTc3MzU1MDYzMjk3.YRyXNw.O87yegqE0WeHVv-tZMdPEiaTfoo')
+bot.run('YOUR TOKEN HERE')
 
 
-'''Saved Embed example
-Embed = discord.Embed(
-    title = 'Your random doujin!',
-    description = f'[:tada:**Your mysterious doujin!**:tada:](https://nhentai.net/g/{RandDoujin}/)'),
-    color = discord.Color.from_rgb(101, 67, 33)
-  )
-  Embed.set_image(url="https://c.tenor.com/7fuoqpm9DtwAAAAd/please-dont-bully-me-anime.gif")
 
-  await ctx.channel.send(embed = Embed)'''
 
 
 #C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\python.exe -m pip install --upgrade pip
