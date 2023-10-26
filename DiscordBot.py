@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 
 # ~~~~ Current Bugs ~~~~
 # NONE!
-# Squidward partying!
+# Squidward partying!!
 
 # ~~~~ Possible Addons ~~~~
 #1. Revamp the google function to get actual google stats
