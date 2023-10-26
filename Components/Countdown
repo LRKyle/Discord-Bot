@@ -6,4 +6,4 @@ while voice.is_playing():
       await asyncio.sleep(1)
       songDuration[0] = songDuration[0]
    print(f'you doing Mr. Biggs? {songDuration[0]}')
-   print('There used to be a queue countdown function here.. one day, I will add it back. :(')
+   print('There used to be a queue countdown function here.. one day, I will add it back. lol')
